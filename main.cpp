@@ -32,11 +32,11 @@ void Person::setID(int newID){
    id= newID;
 }
 
-void Person::getName(){
+string Person::getName(){
   return name;
 }
 
-void Person::getID(){
+int Person::getID(){
   return id;
 }
 
@@ -47,7 +47,32 @@ void Person::getID(){
 
 
 // ==================== Student Class Implementation ====================
-
+Student::Student(){
+   yearLevel= 0; 
+   major= "";
+}
+Student::Student (int y, string m, string n, int Pid): Person (n, Pid){
+yearLevel= y;
+major= m; 
+}
+~Student(){}
+void Student::display(){
+Person::display();
+cout<< "Year level: "<< yearLevel<< endl;
+cout<< "Major: "<< major<< endl;
+}
+void setYearLevel(int newYear){
+   yearlevel= newYear;
+}
+void setMajor(string newMajor){
+   major=NewMajor;
+}
+int getYearLevel(){
+   return yearLevel;
+}
+string getMajor(){
+   return major;
+}
 
 
 
