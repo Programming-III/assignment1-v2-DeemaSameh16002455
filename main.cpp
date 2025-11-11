@@ -61,16 +61,16 @@ Person::display();
 cout<< "Year level: "<< yearLevel<< endl;
 cout<< "Major: "<< major<< endl;
 }
-void setYearLevel(int newYear){
+void Student::setYearLevel(int newYear){
    yearlevel= newYear;
 }
-void setMajor(string newMajor){
+void Student::setMajor(string newMajor){
    major=NewMajor;
 }
-int getYearLevel(){
+int Student:: getYearLevel(){
    return yearLevel;
 }
-string getMajor(){
+string Student::getMajor(){
    return major;
 }
 
@@ -79,7 +79,35 @@ string getMajor(){
 
 
 // ==================== Instructor Class Implementation ====================
+Instructor:: Instructor(){
+department= "";
+experienceYears= 0;
+}
 
+Instructor:: Instructor(string d, int exp, string n, int Pid): Person (n, Pid){
+   department=d; 
+   experienceYears= exp;
+}
+~Instructor::Instructor (){}
+
+void Instructor:: diplay(){
+  Person:: display();
+   cout<< "Department: "<< department<<endl;
+   cout<< "Years of Experience: "<< experienceYears<<endl;
+}
+
+void Instructor:: setDepartment (string newDep){
+   department= newDep;
+}
+void Instructor:: setExp (int newExp){
+   experienceYears= newExp;
+}
+string Instructor:: getDep(){
+   return department;
+}
+int Instructor:: getExp(){
+   return experienceYears;
+}
 
 
 
