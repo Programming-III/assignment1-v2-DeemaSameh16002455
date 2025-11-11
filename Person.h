@@ -13,6 +13,10 @@ Person();
 Person(string n, int Pid);
 ~Person();
 virtual void display();
+void setName (string newName);
+void setID (int newID);
+string getName();
+int getID();
 };
 
 
