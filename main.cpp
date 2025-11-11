@@ -114,7 +114,39 @@ int Instructor:: getExp(){
 
 
 // ==================== Course Class Implementation ====================
-
+Course::Course(){
+   courseCode= "";
+   courseName="";
+   maxStudents=0;
+   currentStudents= 0;
+}
+Course::Course (string code, string name, int max, int current){
+    courseCode= code;
+   courseName=name;
+   maxStudents=max;
+   currentStudents= current;
+   students= new Student [max];
+}
+~Course(){
+   delete []students;
+}
+void addStudent(const Student& s){
+   Student* newStudent= new Student [max +1];
+   for (int i=0; i< max; i++){
+      newStudent[i]= students[i];
+}
+newStudent[currentStudents]= s;
+delete students; 
+students= newStudent; 
+}
+void displayCourseInfo(){
+   cout<<"Course code: "<< courseCode<< endl;
+   
+}
+void setCourseCode(string newCode);
+void setCourseName(string newName);
+string getCourseCode();
+string getCourseName();
 
 
 
